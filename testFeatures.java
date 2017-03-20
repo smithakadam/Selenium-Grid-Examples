@@ -28,8 +28,7 @@ public class testFeatures {
 		FirefoxProfile myprof = profile.getProfile("myProfile");
 
 		System.setProperty("webdriver.gecko.driver", "C:/Selenium/geckodriver-v0.13.0-win64/geckodriver.exe");
-		// System.setProperty("webdriver.chrome.driver",
-		// "C:/Selenium/chromedriver_win32/chromedriver.exe");
+	
 
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
 		capability.setCapability(FirefoxDriver.BINARY,
@@ -45,7 +44,6 @@ public class testFeatures {
 		System.setProperty("webdriver.chrome.driver", "C:/Selenium/chromedriver_win32/chromedriver.exe");
 
 		DesiredCapabilities capability1 = DesiredCapabilities.chrome();
-		//capability1.setCapability(ChromeDriver, new File ("C:/Program Files (x86)/Mozilla Firefox/firefox.exe").getAbsolutePath());
 
 		capability1.setBrowserName("chrome");
 
@@ -60,9 +58,6 @@ public class testFeatures {
 		capability2.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
 		capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		capability2.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
-
-
-		//capability2.setBrowserName("Internet Explorer");
 		
 		driver = new RemoteWebDriver(new URL(" http://localhost:5570/wd/hub"), capability2);
 		testfeatures();
@@ -92,9 +87,8 @@ public class testFeatures {
 
 		driver.findElement(By.linkText("Need help logging on?")).click();
 		driver.switchTo().defaultContent();
-		//driver.findElement((By.id("txtSiteSearch"))).sendKeys("internet");
 
-		// driver.quit();
+		driver.quit();
 
 	}
 
